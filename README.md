@@ -28,3 +28,7 @@ SELECT COUNT(*) FROM additional_driver;
 SELECT * FROM car_type WHERE Price_Per_Day BETWEEN '20' AND '100';
 12. Select all the different values from the Insurance type column in the car insurance table.
 SELECT DISTINCT Insurance_type FROM car_insurance;
+13.Display car size is the most preferred.
+ SELECT seating_capacity FROM car WHERE Model = (SELECT MAX(seating_capacity) FROM car);
+14.Delete all the reservations for customer whose last name starts with ‘S’
+DELETE FROM RESERVATION WHERE Reservation_ID IN (SELECT Reservation_ID FROM car_user WHERE LNAME LIKE 'S%');
