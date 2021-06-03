@@ -6,9 +6,9 @@ SELECT Model, MAX(Seating_Capacity) AS max_seating_capacity FROM car GROUP BY Mo
 DELETE FROM rental_location WHERE Street_Name LIKE '%Irving%';
 4.Find names of Drivers whose last name starts with ‘P’.
 SELECT Fname,Lname FROM car_user WHERE LNAME like 'P%';
-5.Display the list of additional drivers .
+5.Display the list of additional drivers ..
 SELECT * from additional_drivers;
-6.Show the list of available promo codes.
+6.Show the list of available promo codes..
 SELECT Promo_code,Description FROM offer_details WHERE Status='available';
 7.Show the driver phone number,licence number whose name is Patrick.
 SELECT License_no,Phone FROM `car_user` WHERE Fname='Patrick';
@@ -22,7 +22,7 @@ SELECT COUNT(*) FROM additional_driver;
 SELECT * FROM car_type WHERE Price_Per_Day BETWEEN '20' AND '100';
 12. Select all the different values from the Insurance type column in the car insurance table.
 SELECT DISTINCT Insurance_type FROM car_insurance;
-13.Display car size is the most preferred.
+13.Display car size is the most preferred..
  SELECT seating_capacity FROM car WHERE Model = (SELECT MAX(seating_capacity) FROM car);
 14.Delete all the reservations for customer whose last name starts with ‘S’
 DELETE FROM RESERVATION WHERE Reservation_ID IN (SELECT Reservation_ID FROM car_user WHERE LAST_NAME LIKE 'S%');
