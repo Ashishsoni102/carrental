@@ -7,7 +7,7 @@ A rental location has a number of cars for rental. Each car is described by VIN,
 
 2.Open XAMPP Control panal and start [apache] and [mysql] .
 
-3.Download project from github.
+3.Download project from github .
 
 4.Open link localhost/phpmyadmin
 
