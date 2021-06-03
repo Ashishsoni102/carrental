@@ -26,3 +26,27 @@ SELECT DISTINCT Insurance_type FROM car_insurance;
  SELECT seating_capacity FROM car WHERE Model = (SELECT MAX(seating_capacity) FROM car);
 14.Delete all the reservations for customer whose last name starts with ‘S’
 DELETE FROM RESERVATION WHERE Reservation_ID IN (SELECT Reservation_ID FROM car_user WHERE LAST_NAME LIKE 'S%');
+15.Query To excute Right Join.
+SELECT car.Model,car.Car_Type,car_type.Price_Per_Day
+FROM car 
+RIGHT JOIN car_type
+ON car.Car_Type = car_type.Car_Type;
+16.Query To excute Left Join.
+SELECT car.Model,car.Car_Type,car_type.Price_Per_Day
+FROM car 
+LEFT JOIN car_type
+ON car.Car_Type = car_type.Car_Type;
+17.Query To excute Inner join.
+SELECT car.Model,car.Car_Type,car_type.Car_Type,car_type.Price_Per_Day
+FROM car 
+INNER JOIN car_type
+ON car.Car_Type = car_type.Car_Type
+18.Display all the data of car whose card number Expiry_Date is '2018-01-15' and CVV is '833'.
+SELECT * FROM car
+WHERE Card_No =
+(SELECT Card_No FROM card_details
+WHERE Expiry_Date = '2018-01-15' AND CVV = '833');
+19.Display all the data of car whose rental_location_ID is '101'.
+SELECT * from car
+Where Rental_Laction_ID in (select Rental_Location_ID='102' From rental_Location);
+20.Display the Car type and the Model of the car where the Rental_location_ID is ' 102 '. (Implementation of PLSQL)
